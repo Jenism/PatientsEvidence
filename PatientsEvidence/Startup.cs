@@ -1,3 +1,7 @@
+using ApplicationCore.Repository;
+using ApplicationRepository.XML;
+using BussinessLogic;
+using BussinessLogic.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -21,6 +25,9 @@ namespace PatientsEvidence
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            services.AddSingleton<IPatientRepository, PatientRepository>();
+            services.AddSingleton<IPatient, PatientBL>();
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>

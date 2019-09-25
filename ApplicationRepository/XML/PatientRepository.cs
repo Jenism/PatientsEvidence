@@ -11,8 +11,8 @@ namespace ApplicationRepository.XML
     public class PatientRepository : IPatientRepository
     {
 
-        private const string PATIENTS_XML_PATH = "..\\..\\..\\..\\..\\ApplicationRepository\\XML\\Data\\Patients.xml";
-        private const string PATIENTS_SCHEMA_PATH = "..\\..\\..\\..\\..\\ApplicationRepository\\XML\\Schema\\PatientsSchema.xsd";
+        private const string PATIENTS_XML_PATH = "..\\ApplicationRepository\\XML\\Data\\Patients.xml";
+        private const string PATIENTS_SCHEMA_PATH = "..\\ApplicationRepository\\XML\\Schema\\PatientsSchema.xsd";
 
         public IEnumerable<Patient> GetAllPatients()
         {
