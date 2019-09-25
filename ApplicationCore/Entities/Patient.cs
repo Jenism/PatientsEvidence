@@ -6,8 +6,8 @@ namespace ApplicationCore.Entities
 {
     public class Patient
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        public string Name { get; set; }
+        public string Surname { get; set; }
         public int Height { get; set; }
         public int Weight { get; set; }
         public DateTime DateOfBirth { get; set; }

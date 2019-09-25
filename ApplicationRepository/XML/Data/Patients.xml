@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<patients>
+  <patient>
+    <name>Matej</name>
+    <surname>Jenis</surname>
+    <height>185</height>
+    <weight>75</weight>
+    <dateOfBirth>17.1.1994</dateOfBirth>
+  </patient>
+</patients>
