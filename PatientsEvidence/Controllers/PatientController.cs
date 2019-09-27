@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ApplicationCore.Entities;
+using BussinessLogic.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -9,14 +11,23 @@ using Microsoft.AspNetCore.Mvc;
 namespace PatientsEvidence.Controllers
 {
     [Route("api/[controller]")]
-    public class PatientController : Controller
+    public class PatientController : BaseController
     {
+        public PatientController(IPatient patientBL) : base(patientBL) { }
+
         // GET: api/<controller>
         [HttpGet]
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
         }
+
+        [HttpGet("[action]")]
+        public IEnumerable<Patient> GetAllPatients()
+        {
+            return patientBL.GetAllPatients();
+        }
+
 
         // GET api/<controller>/5
         [HttpGet("{id}")]

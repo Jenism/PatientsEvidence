@@ -11,5 +11,6 @@ namespace ApplicationCore.Entities
         public int Height { get; set; }
         public int Weight { get; set; }
         public DateTime DateOfBirth { get; set; }
+        public int Age => DateOfBirth.GetAge();
     }
 }

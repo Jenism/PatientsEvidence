@@ -1,0 +1,57 @@
+<h1>Patients</h1>
+
+
+<h6>Filter by:</h6>
+
+<div class="input-group input-group-sm mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-sm">Name</span>
+  </div>
+  <input type="text" class="form-control" aria-label="Name" aria-describedby="inputGroup-sizing-sm" [(ngModel)]="nameFilter">
+</div>
+
+<div class="input-group input-group-sm mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-sm">Surname</span>
+  </div>
+  <input type="text" class="form-control" aria-label="Surname" aria-describedby="inputGroup-sizing-sm" [(ngModel)]="surnameFilter">
+</div>
+
+<div class="input-group input-group-sm mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-sm">Age</span>
+  </div>
+  <input type="text" class="form-control" aria-label="Age" aria-describedby="inputGroup-sizing-sm" [(ngModel)]="ageFilter">
+</div>
+
+<div class="input-group input-group-sm mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-sm">Birth date</span>
+  </div>
+  <input type="date" class="form-control" aria-label="Birth date" aria-describedby="inputGroup-sizing-sm" [(ngModel)]="dateOfBirthFilter">
+</div>
+
+<table class='table table-striped' *ngIf="filteredPatients">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <th>Surname</th>
+      <th>Height</th>
+      <th>Weight</th>
+      <th>Birt date</th>
+      <th>Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let patient of filteredPatients; let i = index">
+      <td>{{ i + 1 }}.</td>
+      <td>{{ patient.name }}</td>
+      <td>{{ patient.surname }}</td>
+      <td>{{ patient.height }}</td>
+      <td>{{ patient.weight }}</td>
+      <td>{{ patient.dateOfBirth | date:'dd.MM.yyyy' }}</td>
+      <td>{{ patient.age }}</td>
+    </tr>
+  </tbody>
+</table>
