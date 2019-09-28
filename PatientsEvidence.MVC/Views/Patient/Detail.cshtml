@@ -1,0 +1,60 @@
+﻿@model PatientsEvidence.MVC.Models.Patient.PatientViewModel
+
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<div>
+    <h4>Detail</h4>
+    <hr />
+
+    <b>Average height of patients heavier than average weight: </b><p>@Model.HeightAverage</p>
+    @if (Model.Patient != null)
+    {
+        <form>
+            <div class="form-group row">
+                <label for="patientName" class="col-sm-2 col-form-label">Name</label>
+                <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext" id="patientName" value="@Model.Patient.Name">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="patientSurname" class="col-sm-2 col-form-label">Surname</label>
+                <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext" id="patientSurname" value="@Model.Patient.Surname">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="patientHeight" class="col-sm-2 col-form-label">Height</label>
+                <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext" id="patientHeight" value="@Model.Patient.Height">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="patientWeight" class="col-sm-2 col-form-label">Weight</label>
+                <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext" id="patientWeight" value="@Model.Patient.Weight">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="patientBirthDate" class="col-sm-2 col-form-label">Date of birth</label>
+                <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext" id="patientBirthDate" value="@Model.Patient.DateOfBirth.ToString("dd.MM.yyyy")">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="patientAge" class="col-sm-2 col-form-label">Age</label>
+                <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext" id="patientAge" value="@Model.Patient.Age">
+                </div>
+            </div>
+        </form>
+    }
+    else
+    {
+        <p>Detail page is empty - patient with provided ID does not exist.</p>
+    }
+</div>
+<div>
+    <a asp-action="Index">Back</a>
+</div>

@@ -12,26 +12,9 @@ namespace PatientsEvidence.MVC.Controllers
 {
     public class HomeController : Controller
     {
-        IPatient patientBL;
-
-        public HomeController(IPatient patientBL)
-        {
-            this.patientBL = patientBL;
-        }
-
         public IActionResult Index()
         {
-            var model = new PatientsListViewModel
-            {
-                Patients = patientBL.GetAllPatients()
-            };
-
-            return View(model);
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
+            return RedirectToAction("Index", "Patient");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

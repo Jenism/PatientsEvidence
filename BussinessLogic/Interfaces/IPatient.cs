@@ -8,5 +8,6 @@ namespace BussinessLogic.Interfaces
     public interface IPatient
     {
         IEnumerable<Patient> GetAllPatients();
+        Patient GetPatientById(int id);
     }
 }

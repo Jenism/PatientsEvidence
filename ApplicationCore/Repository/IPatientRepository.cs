@@ -8,5 +8,6 @@ namespace ApplicationCore.Repository
     public interface IPatientRepository
     {
         IEnumerable<Patient> GetAllPatients();
+        Patient GetPatientById(int id);
     }
 }

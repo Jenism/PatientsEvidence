@@ -24,5 +24,10 @@ namespace BussinessLogic
 
             return patients;
         }
+
+        public Patient GetPatientById(int id)
+        {
+            return patientRepository.GetPatientById(id);
+        }
     }
 }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ApplicationCore
 {
-    internal static class EntitiesExtensions
+    public static class EntitiesExtensions
     {
         public static int GetAge(this DateTime dateOfBirth)
         {

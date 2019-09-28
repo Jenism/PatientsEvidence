@@ -1,0 +1,35 @@
+﻿@model PatientsEvidence.MVC.Models.Patient.PatientsListViewModel
+
+<div class="text-center">
+    <h1>Patients</h1>
+
+    <table id="patientsTable" class="table table-striped table-bordered" style="width:100%; display: none;">
+        <thead>
+            <tr>
+                <th class="filterable">Name</th>
+                <th class="filterable">Surname</th>
+                <th>Height</th>
+                <th>Weight</th>
+                <th class="filterable">Birt date</th>
+                <th class="filterable">Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                var index = 1;
+                foreach (var patient in Model?.Patients)
+                {
+                    <tr>
+                        <td><a asp-controller="Patient" asp-action="Detail" asp-route-id="@index">@patient.Name</a></td>
+                        <td><a asp-controller="Patient" asp-action="Detail" asp-route-id="@index">@patient.Surname</a></td>
+                        <td>@patient.Height</td>
+                        <td>@patient.Weight</td>
+                        <td>@patient.DateOfBirth.ToString("dd.MM.yyyy")</td>
+                        <td>@patient.Age</td>
+                    </tr>
+                    index++;
+                }
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,10 +1,4 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
-
-// Write your JavaScript code.
-
-
-$(document).ready(function () {
+﻿$(document).ready(function () {
 
     $('#patientsTable thead tr').clone(true).appendTo('#patientsTable thead');
     $('#patientsTable thead tr:eq(1) th').each(function (i) {
@@ -32,6 +26,9 @@ $(document).ready(function () {
         orderCellsTop: true,
         "pageLength": 10,
         "searching": true,
-        dom: 'tip'
+        dom: 'tip',
+        "initComplete": function (settings, json) {
+            $('#patientsTable').show();
+        }
     });
 });

@@ -2,6 +2,7 @@
 using ApplicationCore.Repository;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Xml.Linq;
 using System.Xml.Schema;
@@ -40,6 +41,16 @@ namespace ApplicationRepository.XML
             }
 
             return patients;
+        }
+
+        public Patient GetPatientById(int id)
+        {
+            var patients = GetAllPatients().ToList();
+            if (patients != null && patients.Count() >= id)
+            {
+                return patients[id];
+            }
+            return null;
         }
     }
 }
