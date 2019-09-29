@@ -3,7 +3,8 @@
 Backend: 
 - implemented onion architecture proposal:
   - application core
-  - repositories filling core entities with data 
+  - repositories filling core entities with data
+    - data are stored in XML, XML structure is defined and validated by XML Schema document
   - bussiness logic getting data from repositories and doing manipulation on data
 - implemented in c#
 
