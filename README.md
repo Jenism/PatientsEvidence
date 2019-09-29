@@ -14,4 +14,4 @@ Frontend
 - second approach
   - AngularJS 
     - for learning purposes only, i have never really worked with Angular before
-    - might require dependencies to run application
+    - might require dependencies installation (nodeJS e.g.) to run application
