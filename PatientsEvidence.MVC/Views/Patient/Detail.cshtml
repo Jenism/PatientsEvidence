@@ -4,61 +4,59 @@
     ViewData["Title"] = "Detail";
 }
 
-<div>
-    <h4>Detail</h4>
-    <hr />
+    <div>
+        <h4>Detail</h4>
+        <hr />
 
-    @if (Model.HeightAverage.HasValue)
-    {
-        <b>Average height of patients heavier than average weight: </b><p>@Model.HeightAverage</p>
-    }
+        @if (Model.HeightAverage.HasValue)
+        {
+            <b>Average height of patients heavier than average weight: </b><p>@Model.HeightAverage</p>
+        }
 
-    @if (Model.Patient != null)
-    {
-        <form>
-            <div class="form-group row">
-                <label for="patientName" class="col-sm-2 col-form-label">Name</label>
-                <div class="col-sm-10">
-                    <input type="text" readonly class="form-control-plaintext" id="patientName" value="@Model.Patient.Name">
+        @if (Model.Patient != null)
+        {
+            <div class="input-group mb-3 w-25">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="nameLabel">Name</span>
                 </div>
+                <input type="text" readonly class="form-control" aria-label="Name" aria-describedby="nameLabel" value="@Model.Patient.Name">
             </div>
-            <div class="form-group row">
-                <label for="patientSurname" class="col-sm-2 col-form-label">Surname</label>
-                <div class="col-sm-10">
-                    <input type="text" readonly class="form-control-plaintext" id="patientSurname" value="@Model.Patient.Surname">
+            <div class="input-group mb-3 w-25">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="surnameLabel">Surname</span>
                 </div>
+                <input type="text" readonly class="form-control" aria-label="Surname" aria-describedby="surnameLabel" value="@Model.Patient.Surname">
             </div>
-            <div class="form-group row">
-                <label for="patientHeight" class="col-sm-2 col-form-label">Height</label>
-                <div class="col-sm-10">
-                    <input type="text" readonly class="form-control-plaintext" id="patientHeight" value="@Model.Patient.Height">
+            <div class="input-group mb-3 w-25">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="heightLabel">Height</span>
                 </div>
+                <input type="text" readonly class="form-control" aria-label="Height" aria-describedby="heightLabel" value="@Model.Patient.Height">
             </div>
-            <div class="form-group row">
-                <label for="patientWeight" class="col-sm-2 col-form-label">Weight</label>
-                <div class="col-sm-10">
-                    <input type="text" readonly class="form-control-plaintext" id="patientWeight" value="@Model.Patient.Weight">
+            <div class="input-group mb-3 w-25">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="weightLabel">Weight</span>
                 </div>
+                <input type="text" readonly class="form-control" aria-label="Weight" aria-describedby="weightLabel" value="@Model.Patient.Weight">
             </div>
-            <div class="form-group row">
-                <label for="patientBirthDate" class="col-sm-2 col-form-label">Date of birth</label>
-                <div class="col-sm-10">
-                    <input type="text" readonly class="form-control-plaintext" id="patientBirthDate" value="@Model.Patient.DateOfBirth.ToString("dd.MM.yyyy")">
+            <div class="input-group mb-3 w-25">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="birthDateLabel">DateOfBirth</span>
                 </div>
+                <input type="text" readonly class="form-control" aria-label="DateOfBirth" aria-describedby="birthDateLabel" value="@Model.Patient.DateOfBirth.ToString("dd.MM.yyyy")">
             </div>
-            <div class="form-group row">
-                <label for="patientAge" class="col-sm-2 col-form-label">Age</label>
-                <div class="col-sm-10">
-                    <input type="text" readonly class="form-control-plaintext" id="patientAge" value="@Model.Patient.Age">
+            <div class="input-group mb-3 w-25">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="ageLabel">Age</span>
                 </div>
+                <input type="text" readonly class="form-control" aria-label="Age" aria-describedby="ageLabel" value="@Model.Patient.Age">
             </div>
-        </form>
-    }
-    else
-    {
-        <p>Detail page is empty - patient with provided ID does not exist.</p>
-    }
-</div>
+        }
+        else
+        {
+            <p>Detail page is empty - patient with provided ID does not exist.</p>
+        }
+    </div>
 <div>
     <a asp-action="Index">Back</a>
 </div>
