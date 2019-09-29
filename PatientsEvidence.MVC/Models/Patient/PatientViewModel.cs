@@ -8,9 +8,9 @@ namespace PatientsEvidence.MVC.Models.Patient
     {
         public entities.Patient Patient { get; set; }
 
-        public double HeightAverage { get; }
+        public double? HeightAverage { get; }
 
-        public PatientViewModel(double heightAverage)
+        public PatientViewModel(double? heightAverage)
         {
             HeightAverage = heightAverage;
         }

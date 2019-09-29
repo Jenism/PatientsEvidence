@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { PatientsComponent } from './patients/patients.component';
+import { PatientDetailComponent } from './patient-detail/patient-detail.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { PatientsComponent } from './patients/patients.component';
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    PatientsComponent
+    PatientsComponent,
+    PatientDetailComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -29,6 +31,7 @@ import { PatientsComponent } from './patients/patients.component';
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'patients', component: PatientsComponent },
+      { path: 'patient-detail/:id', component: PatientDetailComponent }
     ])
   ],
   providers: [],

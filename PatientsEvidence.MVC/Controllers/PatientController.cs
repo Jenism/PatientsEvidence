@@ -31,7 +31,7 @@ namespace PatientsEvidence.MVC.Controllers
         {
             id--;
             var patients = patientBL.GetAllPatients();
-            var heightAverage = patients.Where(p => p.Weight > patients.Select(pa => pa.Weight).Average()).Select(p => p.Height).Average();
+            var heightAverage = patients?.Where(p => p.Weight > patients.Select(pa => pa.Weight).Average()).Select(p => p.Height).Average();
 
             if (id < 0)
                 return View(new PatientViewModel(heightAverage));

@@ -8,7 +8,11 @@
     <h4>Detail</h4>
     <hr />
 
-    <b>Average height of patients heavier than average weight: </b><p>@Model.HeightAverage</p>
+    @if (Model.HeightAverage.HasValue)
+    {
+        <b>Average height of patients heavier than average weight: </b><p>@Model.HeightAverage</p>
+    }
+
     @if (Model.Patient != null)
     {
         <form>

@@ -46,7 +46,7 @@
   <tbody>
     <tr *ngFor="let patient of filteredPatients; let i = index">
       <td>{{ i + 1 }}.</td>
-      <td>{{ patient.name }}</td>
+      <td><a [routerLink]="['/patient-detail', i]">{{patient.name}}</a></td>
       <td>{{ patient.surname }}</td>
       <td>{{ patient.height }}</td>
       <td>{{ patient.weight }}</td>

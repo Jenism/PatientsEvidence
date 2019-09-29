@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using ApplicationCore.Entities;
 using BussinessLogic.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using PatientsEvidence.Angular.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -15,43 +16,38 @@ namespace PatientsEvidence.Controllers
     {
         public PatientController(IPatient patientBL) : base(patientBL) { }
 
-        // GET: api/<controller>
-        [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
-
         [HttpGet("[action]")]
         public IEnumerable<Patient> GetAllPatients()
         {
             return patientBL.GetAllPatients();
         }
 
-
-        // GET api/<controller>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet("[action]")]
+        public PatientViewModel GetPatientDetail(int id)
         {
-            return "value";
+            var patients = patientBL.GetAllPatients();
+
+            if (patients == null || id < 0 || id >= patients?.Count())
+                return null;
+
+            var heightAverage = patients.Where(p => p.Weight > patients.Select(pa => pa.Weight).Average()).Select(p => p.Height).Average();
+
+            if (id >= 0 && patients?.Count() >= id)
+            {
+                var patient = patients.ToList()[0];
+                return new PatientViewModel(heightAverage)
+                {
+                    Name = patient.Name,
+                    Surname = patient.Surname,
+                    Height = patient.Height,
+                    Weight = patient.Weight,
+                    DateOfBirth = patient.DateOfBirth
+                };
+            }
+
+            return null;
+
         }
 
-        // POST api/<controller>
-        [HttpPost]
-        public void Post([FromBody]string value)
-        {
-        }
-
-        // PUT api/<controller>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/<controller>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
     }
 }
