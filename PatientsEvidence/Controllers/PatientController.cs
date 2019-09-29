@@ -34,7 +34,7 @@ namespace PatientsEvidence.Controllers
 
             if (id >= 0 && patients?.Count() >= id)
             {
-                var patient = patients.ToList()[0];
+                var patient = patients.ToList()[id];
                 return new PatientViewModel(heightAverage)
                 {
                     Name = patient.Name,
