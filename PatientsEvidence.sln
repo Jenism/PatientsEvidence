@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29123.88
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PatientsEvidence.Angular", "PatientsEvidence\PatientsEvidence.Angular.csproj", "{C3972817-BD71-450E-BCD8-07DE0E013B01}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PatientsEvidence.Secondary.Angular", "PatientsEvidence\PatientsEvidence.Secondary.Angular.csproj", "{C3972817-BD71-450E-BCD8-07DE0E013B01}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApplicationCore", "ApplicationCore\ApplicationCore.csproj", "{08026863-757A-4621-AF6E-8C65A847579C}"
 EndProject
@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApplicationRepository", "Ap
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BussinessLogic", "BussinessLogic\BussinessLogic.csproj", "{DDB5AD32-B6E2-4514-9A9E-E66DB8D979DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatientsEvidence.MVC", "PatientsEvidence.MVC\PatientsEvidence.MVC.csproj", "{D57795AB-6BFD-4658-88BB-1B8A6FBEDE13}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PatientsEvidence.Primary.MVC", "PatientsEvidence.MVC\PatientsEvidence.Primary.MVC.csproj", "{D57795AB-6BFD-4658-88BB-1B8A6FBEDE13}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
