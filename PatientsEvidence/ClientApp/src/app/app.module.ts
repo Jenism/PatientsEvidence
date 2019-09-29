@@ -19,7 +19,7 @@ import { PatientDetailComponent } from './patient-detail/patient-detail.componen
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: '', component: PatientsComponent, pathMatch: 'full' },
+      { path: '', component: PatientsComponent, pathMatch: 'prefix' },
       { path: 'patients', component: PatientsComponent },
       { path: 'patient-detail/:id', component: PatientDetailComponent }
     ])
