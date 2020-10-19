@@ -8,6 +8,13 @@ namespace PatientsEvidence.MVC.Models.Patient
 {
     public class PatientsListViewModel
     {
-        public IEnumerable<entities.Patient> Patients { get; set; }
+        public IEnumerable<Patient> Patients { get; set; }
     }
+
+  public class Patient
+  {
+    public entities.Patient DbPatient { get; set; }
+    public bool IsNameVisible { get; set; }
+    public bool IsHeightVIsible { get; set; }
+  }
 }

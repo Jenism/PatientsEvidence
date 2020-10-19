@@ -20,12 +20,12 @@
                 foreach (var patient in Model?.Patients)
                 {
                     <tr>
-                        <td><a asp-controller="Patient" asp-action="Detail" asp-route-id="@index">@patient.Name</a></td>
-                        <td><a asp-controller="Patient" asp-action="Detail" asp-route-id="@index">@patient.Surname</a></td>
-                        <td>@patient.Height</td>
-                        <td>@patient.Weight</td>
-                        <td>@patient.DateOfBirth.ToString("dd.MM.yyyy")</td>
-                        <td>@patient.Age</td>
+                        <td><a asp-controller="Patient" asp-action="Detail" asp-route-id="@index">@patient.DbPatient.Name</a></td>
+                        <td><a asp-controller="Patient" asp-action="Detail" asp-route-id="@index">@patient.DbPatient.Surname</a></td>
+                        <td>@patient.DbPatient.Height</td>
+                        <td>@patient.DbPatient.Weight</td>
+                        <td>@patient.DbPatient.DateOfBirth.ToString("dd.MM.yyyy")</td>
+                        <td>@patient.DbPatient.Age</td>
                     </tr>
                     index++;
                 }

@@ -36,7 +36,7 @@ namespace PatientsEvidence.MVC
       });
 
 
-
+      services.AddRazorPages();
       services.AddControllersWithViews();
       //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 
@@ -63,6 +63,7 @@ namespace PatientsEvidence.MVC
       app.UseCookiePolicy();
 
       app.UseRouting();
+      app.UseAuthentication();
       app.UseAuthorization();
 
       app.UseEndpoints(endpoints =>
@@ -70,6 +71,7 @@ namespace PatientsEvidence.MVC
         endpoints.MapControllerRoute(
                   name: "default",
                   pattern: "{controller=Patient}/{action=Index}/{id?}");
+        endpoints.MapRazorPages();
       });
     }
   }
